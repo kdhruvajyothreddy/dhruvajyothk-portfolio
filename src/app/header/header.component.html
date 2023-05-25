@@ -1,0 +1,12 @@
+<nav>
+  <div class="menu-list">
+    <ul>
+      <li *ngFor="let headerItem of headerItems">
+        <button class="menu-button" mat-menu-item>
+          <mat-icon>{{headerItem.itemIcon}}</mat-icon>
+          <span class="span-text">{{headerItem.itemLabelText}}</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
