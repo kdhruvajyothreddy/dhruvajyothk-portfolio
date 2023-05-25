@@ -16,23 +16,32 @@ export class HeaderComponent implements OnInit {
       {
         itemIcon: 'person',
         itemLabelText: 'About',
+        itemOnClickPage: '',
       },
       {
         itemIcon: 'work',
         itemLabelText: 'Skills',
+        itemOnClickPage: '',
       },
       {
         itemIcon: 'insert_drive_file',
         itemLabelText: 'CV',
+        itemOnClickPage: '',
       },
       {
         itemIcon: 'wallet_travel',
         itemLabelText: 'Portfolio',
+        itemOnClickPage: '',
       },
       {
         itemIcon: 'mail',
         itemLabelText: 'Contact Me',
+        itemOnClickPage: 'contact',
       },
     ];
+  }
+
+  menuButtonClick(event: any, onClickComponent: string) {
+    window.location.href = `#${onClickComponent}`;
   }
 }
