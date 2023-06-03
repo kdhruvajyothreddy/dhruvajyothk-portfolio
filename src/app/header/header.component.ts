@@ -8,6 +8,7 @@ import { HeaderItem } from './model/header.model';
 })
 export class HeaderComponent implements OnInit {
   headerItems: HeaderItem[] = [];
+  isMenuOpen: boolean = false;
 
   constructor() {}
 
@@ -41,7 +42,11 @@ export class HeaderComponent implements OnInit {
     ];
   }
 
-  menuButtonClick(event: any, onClickComponent: string) {
+  menuButtonClick(onClickComponent: string) {
     window.location.href = `#${onClickComponent}`;
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

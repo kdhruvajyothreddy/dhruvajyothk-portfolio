@@ -1,7 +1,13 @@
-<nav>
-  <ul>
-    <li *ngFor="let headerItem of headerItems">
-      <button class="menu-button" mat-menu-item (click)="menuButtonClick($event, headerItem.itemOnClickPage)">
+<nav id="my-first">
+  <div class="hamburger">
+    <button class="hamburger-button" (click)="toggleMenu()">
+      <mat-icon>{{isMenuOpen ? 'close' : 'menu'}}</mat-icon>
+    </button>
+  </div>
+  <ul class="navbar" [class.is-list-open]="isMenuOpen">
+    <li *ngFor="let headerItem of headerItems" [class.is-open]="isMenuOpen"
+      [ngClass]="{'is-last-menu-option': headerItem.itemLabelText == 'Contact Me', 'is-first-menu-option': headerItem.itemLabelText == 'About'}">
+      <button class="menu-button" mat-menu-item (click)="menuButtonClick(headerItem.itemOnClickPage)">
         <mat-icon>{{headerItem.itemIcon}}</mat-icon>
         <span class="span-text">{{headerItem.itemLabelText}}</span>
       </button>

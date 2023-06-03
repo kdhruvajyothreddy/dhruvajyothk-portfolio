@@ -1,12 +1,7 @@
 nav {
   background-color: bisque;
   padding: 4px;
-}
-
-nav ul {
-  list-style-type: none;
-  align-items: center !important;
-  text-align: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 ul li {
@@ -25,4 +20,61 @@ ul li {
   border: transparent;
   block-size: 40px;
   cursor: pointer;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger-button {
+  background: bisque;
+  border: transparent;
+  block-size: 40px;
+  cursor: pointer;
+}
+
+@media(max-width:768px) {
+  ul li {
+    border-bottom: 1px solid #cccc;
+  }
+
+  nav {
+    padding: 0px;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .is-list-open {
+    display: block;
+    padding: 4px;
+  }
+
+  .is-open {
+    display: inline-block;
+    width: 97%;
+    padding: 10px;
+    background-color: bisque;
+    border-bottom: 1px solid #cccc;
+  }
+
+  .is-first-menu-option {
+    border-top: 1px solid #cccc !important;
+  }
+
+  .is-last-menu-option {
+    border-bottom: 0px !important;
+  }
 }
